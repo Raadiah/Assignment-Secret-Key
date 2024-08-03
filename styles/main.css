@@ -3,7 +3,6 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vh;
-    font-size: x-large;
 }
 
 /*icons*/
@@ -36,10 +35,13 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .pass-container > * {
+    box-sizing: border-box;
     width: 180px;
-    height: 45px;
+    min-height: 45px;
     border-radius: 5px;
+    padding: 10px 5px;
 }
 
 #pass-btn {
@@ -103,6 +105,18 @@ body {
     border-radius: 5px;
 }
 
+#keypad button:hover {
+    cursor: pointer;
+}
+
+.digit:active {
+    background-color: rgb(223, 221, 221);
+}
+
+#keypad button:active {
+    opacity: 0.7;
+}
+
 #pop {
     background-color: rgb(160, 160, 5);
     color: white;
@@ -125,10 +139,9 @@ body {
     align-items: center;
     gap: 5px;
     margin: 10px 0;
-    height: 25px;
+    height: 40px;
     padding: 5px;
     border-radius: 5px;
-    font-size: small;
 }
 
 .error-msg {
@@ -147,7 +160,7 @@ body {
     display: none;
 }
 
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 400px) {
     #keypad {
         grid-template-columns: 1fr 1fr 1fr;
     }
@@ -160,14 +173,34 @@ body {
 }
 
 @media screen and (min-width: 900px) {
+    body {
+        display: flex;
+        align-items: center;
+    }
+
     .mother-container {
         display: flex;
         align-content: stretch;
         justify-content: center;
         gap: 2px;
+        height: 80%;
+        width: 85%;
+        margin: auto;
     }
 
     .mother-container > div {
         width: 45%;
+    }
+
+    .pass-container > * {
+        width: 250px;
+        height: 60px;
+    }
+
+    #input-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 50px;
     }
 }
