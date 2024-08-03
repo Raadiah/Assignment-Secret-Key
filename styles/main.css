@@ -1,0 +1,40 @@
+.mother-container {
+    margin: 20px auto;
+    width: 80%;
+}
+
+.mother-container div {
+    background-color: rgb(253, 249, 242);
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 3px;
+    border: 1px solid rgb(249, 225, 183);
+}
+
+.pass-container > * {
+    display: block;
+    margin: 10px auto;
+    width: 180px;
+    height: 45px;
+    border-radius: 5px;
+}
+
+#pass-btn {
+    background-color: rgb(130, 201, 130);
+    border: 1px solid lime;
+    box-shadow: 10px rgb(118, 189, 118) inset;
+}
+
+#pass-btn:hover {
+    cursor: pointer;
+}
+
+#pass-btn:active {
+    background-color: rgb(162, 228, 162);
+}
+
+#pass-display, #pass-display::placeholder {
+    font-size: large;
+    text-align: center;
+    vertical-align: middle;
+}
