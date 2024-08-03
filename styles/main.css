@@ -145,15 +145,11 @@ body {
 }
 
 .error-msg {
-    background-color: rgb(177, 4, 4) !important;
-    opacity: 0.8;
-    color: white;
+    background-color: rgb(251, 218, 218) !important;
 }
 
 .success-msg {
-    background-color: green !important;
-    opacity: 0.8;
-    color: white;
+    background-color: rgb(199, 249, 199) !important;
 }
 
 .hidden {
