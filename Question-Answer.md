@@ -21,9 +21,9 @@ Answer: ES6 or EcmaScript 6 is an official release version of JavaScript release
 16. Enhanced Object literals etc 
 
 ## Q2: What is Event Bubble and Event Delegation in JS?
-Answer: For nested DOM, the innermost children triggers its event first, then gradually its parent. This upward triggering from children to parent is known as Event Bubble.
+Answer: For nested DOM, the innermost children triggers its event first, then gradually the parents trigger the events sequentially. This upward triggering from children to parent to grandparent and so in, is known as Event Bubble.
 
-Event Delegation is the process through which an event is added to the parent object. Two benefits of event delegation are:
+Event Delegation is the process through which an event is added to the parent object. The children gets the event of the parent through bubbling effect. Two benefits of event delegation are:
 
 1. Maintains clear code with fewer event handlers
 2. Newer child elements automatically gets the event
