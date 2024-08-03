@@ -24,6 +24,7 @@ body {
     background-color: whitesmoke;
     border-radius: 5px;
     padding: 20px;
+    min-width: 200px;
 }
 
 /*passkey generator*/
@@ -58,7 +59,7 @@ body {
 /*pass key input*/
 
 #input-container {
-    padding: 10px;
+    padding: 20px;
     margin-top: 2px;
 }
 
@@ -122,6 +123,7 @@ body {
     height: 25px;
     padding: 5px;
     border-radius: 5px;
+    font-size: small;
 }
 
 .error-msg {
