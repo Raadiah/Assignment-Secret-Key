@@ -1,19 +1,29 @@
+/*icons*/
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
 .mother-container {
     margin: 20px auto;
     width: 80%;
 }
 
 .mother-container div {
-    background-color: rgb(253, 249, 242);
+    background-color: whitesmoke;
     border-radius: 5px;
-    padding: 20px;
+    padding: 10px;
     margin-bottom: 3px;
-    border: 1px solid rgb(249, 225, 183);
 }
+
+/*passkey generator*/
 
 .pass-container > * {
     display: block;
-    margin: 10px auto;
+    margin: 20px auto;
     width: 180px;
     height: 45px;
     border-radius: 5px;
@@ -34,7 +44,81 @@
 }
 
 #pass-display, #pass-display::placeholder {
-    font-size: large;
+    font-size: x-large;
     text-align: center;
     vertical-align: middle;
+}
+
+/*pass key input*/
+#input-display {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#pass-input {
+    display: inline-block;
+    width: 180px;
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: x-large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Keypad*/
+
+#keypad {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#keypad button {
+    height: 45px;
+    margin: 5px;    
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#pop {
+    background-color: rgb(160, 160, 5);
+    color: white;
+}
+
+#clear{
+    background-color: rgb(129, 2, 2);
+    color: white;
+}
+
+#check {
+    background-color: rgb(1, 54, 1);
+    color: white;
+}
+
+/*message*/
+
+#message {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.error-msg {
+    background-color: rgb(177, 4, 4) !important;
+    opacity: 0.8;
+    color: white;
+}
+
+.success-msg {
+    background-color: green !important;
+    opacity: 0.8;
+    color: white;
+}
+
+.hidden {
+    display: none;
 }

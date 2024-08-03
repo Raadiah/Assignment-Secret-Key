@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secret Key Matcher</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <div class="mother-container">
@@ -12,14 +13,113 @@
             <button id="pass-btn">Generate Secret Key</button>
             <input type="text" placeholder="******" id="pass-display" disabled>
         </div>
-        <div>Keyboard layout</div>
+        <div>
+            <div id="input-display">
+                <span>Enter Key: </span>
+                <span id="pass-input"></span>
+            </div>
+            <div id="keypad">
+                <button class="digit">1</button>
+                <button class="digit">2</button>
+                <button class="digit">3</button>
+                <button class="digit">4</button>
+                <button class="digit">5</button>
+                <button class="digit">6</button>
+                <button class="digit">7</button>
+                <button class="digit">8</button>
+                <button class="digit">9</button>
+                <button class="digit">0</button>
+                <button id="pop">x</button>
+                <button id="clear">Clear</button>
+                <button id="check">Check</button>
+            </div>
+            <div id="message" class="hidden"></div>
+        </div>
     </div>
 </body>
 <script>
     let secretKey = '';
+    let inputkey = '';
+
     document.getElementById('pass-btn').addEventListener('click', function(){
         secretKey = Math.floor(100000 + Math.random() * 900000);
         document.getElementById('pass-display').value = secretKey;
+        clearMessage();
     })
+
+    document.getElementById('keypad').addEventListener('click', function(){
+        if(inputkey.length==6) return;
+        if(!event.target.classList.contains('digit')) return;
+        inputkey+=event.target.innerText;
+        document.getElementById('pass-input').innerText = inputkey;
+    })
+
+    document.getElementById('pop').addEventListener('click', function(event){
+        if(inputkey.length==0) return;
+        inputkey = inputkey.substring(0, inputkey.length - 1);
+        document.getElementById('pass-input').innerText = inputkey;
+        event.stopPropagation();
+    })
+
+    document.getElementById('clear').addEventListener('click', function(event){
+        inputkey = '';
+        document.getElementById('pass-input').innerText = inputkey;
+        event.stopPropagation();
+    })
+
+    document.getElementById('check').addEventListener('click', function(event){
+        clearMessage();
+        if(secretKey.length==0) {
+            showNoPassKeyMessage();
+            return;
+        }
+        if(inputkey==secretKey) showSuccessMessage();
+        else showNoMatchMessage();
+        event.stopPropagation();
+    })
+
+    //common
+    function hideElem(elem, hide=true) {
+        if(hide) elem.classList.add('hidden');
+        else elem.classList.remove('hidden');
+    }
+
+    //messages
+    function showNoPassKeyMessage() {
+        let messageElem = document.getElementById('message');
+        messageElem.innerHTML = `<span class="material-symbols-outlined">
+                close
+            </span>
+            No pass key exists!`
+        messageElem.classList.add('error-msg');
+        hideElem(messageElem, false);
+    }
+
+    function showNoMatchMessage() {
+        let messageElem = document.getElementById('message');
+        messageElem.innerHTML = `<span class="material-symbols-outlined">
+                close
+            </span>
+            Pass key did not match!`
+        messageElem.classList.add('error-msg');
+        hideElem(messageElem, false);
+    }
+
+    function showSuccessMessage() {
+        let messageElem = document.getElementById('message');
+        messageElem.innerHTML = `<span class="material-symbols-outlined">
+                check_circle
+            </span>
+            Pass key is correct!`
+        messageElem.classList.add('success-msg');
+        hideElem(messageElem, false);
+    }
+
+    function clearMessage() {
+        let messageElem = document.getElementById('message')
+        messageElem.innerText = '';
+        messageElem.classList.remove('success-msg', 'error-msg');
+        hideElem(messageElem, true);
+    }
 </script>
 </html>
