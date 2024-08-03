@@ -6,6 +6,7 @@
     <title>Secret Key Matcher</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://kit.fontawesome.com/241c20155b.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="mother-container">
@@ -87,30 +88,30 @@
     //messages
     function showNoPassKeyMessage() {
         let messageElem = document.getElementById('message');
-        messageElem.innerHTML = `<span class="material-symbols-outlined">
-                close
-            </span>
-            No pass key generated yet!`
+        messageElem.innerHTML = `
+            <i class="fa-regular fa-circle-xmark"></i>
+            No pass key generated yet!
+        `;
         messageElem.classList.add('error-msg');
         hideElem(messageElem, false);
     }
 
     function showNoMatchMessage() {
         let messageElem = document.getElementById('message');
-        messageElem.innerHTML = `<span class="material-symbols-outlined">
-                close
-            </span>
-            Pass key did not match!`
+        messageElem.innerHTML = `
+            <i class="fa-regular fa-circle-xmark"></i>
+            Pass key did not match!
+        `;
         messageElem.classList.add('error-msg');
         hideElem(messageElem, false);
     }
 
     function showSuccessMessage() {
         let messageElem = document.getElementById('message');
-        messageElem.innerHTML = `<span class="material-symbols-outlined">
-                check_circle
-            </span>
-            Pass key is correct!`
+        messageElem.innerHTML = `
+            <i class="fa-regular fa-circle-check"></i>
+            Pass key is correct!
+        `;
         messageElem.classList.add('success-msg');
         hideElem(messageElem, false);
     }
