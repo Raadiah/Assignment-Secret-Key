@@ -29,9 +29,14 @@ body {
 
 /*passkey generator*/
 
+.pass-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
 .pass-container > * {
-    display: block;
-    margin: 20px auto;
     width: 180px;
     height: 45px;
     border-radius: 5px;
@@ -160,8 +165,6 @@ body {
         align-content: stretch;
         justify-content: center;
         gap: 2px;
-        width: 95%;
-        height: 95%;
     }
 
     .mother-container > div {
