@@ -79,7 +79,7 @@
 
 #keypad {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
     margin: 10px 0;
 }
@@ -112,6 +112,9 @@
     align-items: center;
     gap: 5px;
     margin: 10px 0;
+    height: 25px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .error-msg {
@@ -128,4 +131,23 @@
 
 .hidden {
     display: none;
+}
+
+@media screen and (min-width: 300px) {
+    #keypad {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 701px) {
+    #keypad {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .mother-container {
+        display: flex;
+        gap: 2px;
+    }
 }
